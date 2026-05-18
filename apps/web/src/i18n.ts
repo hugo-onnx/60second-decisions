@@ -8,7 +8,6 @@ export interface TranslationCopy {
     privacyPolicyDescription: string;
   };
   hero: {
-    eyebrow: string;
     headingAria: string;
     headingFirst: string;
     headingEmphasis: string;
@@ -240,7 +239,6 @@ export const copy: TranslationCopy = {
       'Read how ClearPick handles local decision data and Pro waitlist email addresses.',
   },
   hero: {
-    eyebrow: 'Weighted decisions, in your browser',
     headingAria: 'Stop overthinking. Start deciding.',
     headingFirst: 'Stop overthinking.',
     headingEmphasis: 'Start deciding.',
