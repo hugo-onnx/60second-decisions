@@ -1,7 +1,7 @@
 "use client";
 
 import { MeshGradient } from '@paper-design/shaders-react';
-import { ArrowDown, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowDown, ShieldCheck } from 'lucide-react';
 import {
   useEffect,
   useRef,
@@ -212,17 +212,6 @@ export default function ShaderShowcase({
 
       <div className="relative z-20 flex min-h-svh w-full flex-col sm:min-h-[calc(100svh-4rem)] lg:min-h-[calc(100vh-5rem)]">
         <main className="relative z-20 mx-auto flex min-h-svh w-full max-w-4xl flex-col items-center justify-center px-4 pb-32 pt-20 text-center sm:min-h-[calc(100svh-4rem)] sm:px-8 sm:pb-28 sm:pt-24 lg:min-h-[calc(100vh-5rem)]">
-          <div className="relative isolate mb-4 inline-flex max-w-full items-center gap-2 overflow-hidden rounded-lg border border-white/15 bg-slate-950/50 px-3 py-2 shadow-[0_16px_50px_rgba(0,0,0,0.24)] sm:px-4">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-cyan-400/[0.04]"
-            />
-            <Sparkles aria-hidden="true" className="relative z-10 size-4 text-cyan-100" />
-            <span className="relative z-10 min-w-0 text-xs font-semibold leading-5 text-white/95 sm:text-sm">
-              {copy.eyebrow}
-            </span>
-          </div>
-
           <h1
             aria-label={copy.headingAria}
             className="mb-5 w-full max-w-[22rem] text-balance text-[clamp(2.55rem,12vw,4rem)] font-bold leading-none tracking-normal text-white drop-shadow-[0_6px_28px_rgba(0,0,0,0.45)] sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-8xl"
