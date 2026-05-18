@@ -819,7 +819,8 @@ export function ResultsPanel({
                     }
                     aria-label={copy.proWaitlistEmailLabel}
                     autoComplete="email"
-                    className="peer ps-9 caret-cyan-600 focus:border-cyan-600/60 focus:ring-4 focus:ring-cyan-600/15 focus-visible:border-cyan-600/60 focus-visible:ring-4 focus-visible:ring-cyan-600/15"
+                    className="peer ps-9 caret-cyan-600 placeholder:text-foreground/45 focus:border-cyan-600/60 focus:ring-4 focus:ring-cyan-600/15 focus-visible:border-c
+          +yan-600/60 focus-visible:ring-4 focus-visible:ring-cyan-600/15"
                     disabled={
                       waitlistStatus === 'submitting' || hasJoinedWaitlist
                     }
