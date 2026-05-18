@@ -13,7 +13,7 @@ Preview image: https://clear-pick.pages.dev/social-card-whatsapp.jpg
 Primary language: English
 Additional interface language: Spanish
 Application type: Browser-only weighted decision matrix and weighted scoring model tool
-Title: ClearPick | Weighted Decisions Tool
+Title: ClearPick - Start deciding
 
 ClearPick helps people compare options by naming choices, setting criterion importance, ranking options for each criterion, and reviewing the ranked result with transparent score contributions.
 
