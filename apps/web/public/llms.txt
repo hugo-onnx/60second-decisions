@@ -18,7 +18,7 @@ Title: ClearPick - Start deciding
 ClearPick helps people compare options by naming choices, setting criterion importance, ranking options for each criterion, and reviewing the ranked result with transparent score contributions.
 
 Best description:
-Compare options with a weighted decision tool. Set priorities, rank options, and get a clear recommendation in 60 seconds.
+Name your options, rank your choices, and find your answer. ClearPick is a private, weighted decision tool that runs entirely in your browser no account needed.
 
 Privacy:
 - Runs entirely in the browser
