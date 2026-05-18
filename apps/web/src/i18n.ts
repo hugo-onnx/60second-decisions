@@ -228,7 +228,7 @@ function joinEnglishLabels(labels: string[]): string {
 
 export const copy: TranslationCopy = {
   document: {
-    title: 'ClearPick | Weighted Decisions Tool',
+    title: 'ClearPick - Start deciding',
     description:
       'Stop overthinking your decisions. ClearPick helps you compare options, weight your options, and find a clear answer — privately, in your browser.',
     howItWorksTitle: 'How ClearPick Works | Weighted Decision Guide',
