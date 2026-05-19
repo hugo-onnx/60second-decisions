@@ -27,7 +27,7 @@ interface CriteriaSectionProps {
   onCategoryRankingChange: (id: string, optionIds: string[]) => void;
 }
 
-const labelClass = 'text-[11px] font-semibold uppercase text-muted-foreground';
+const labelClass = 'text-[11px] font-semibold text-muted-foreground';
 
 export function CriteriaSection({
   matrix,
@@ -126,7 +126,7 @@ export function CriteriaSection({
           <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">
             {copy.criteriaDescription}
           </p>
-          <p className="mt-2 text-xs font-semibold uppercase text-muted-foreground">
+          <p className="mt-2 text-xs font-semibold text-muted-foreground">
             {copy.criteriaCount(matrix.categories.length)}
           </p>
         </div>
