@@ -28,11 +28,6 @@ export function AppFooter({
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
-  const handleBackToTop = () => {
-    const target = document.getElementById('decision-matrix') ?? document.documentElement;
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -97,9 +92,6 @@ export function AppFooter({
                 {copy.privacyPolicy}
               </a>
             ) : null}
-            <p className="mt-2 text-xs text-muted-foreground" id="site-footer-note">
-              {copy.note}
-            </p>
           </div>
         </div>
 
@@ -192,15 +184,6 @@ export function AppFooter({
         </div>
       </div>
 
-      <div className="mt-10 flex justify-end">
-        <button
-          className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-          onClick={handleBackToTop}
-          type="button"
-        >
-          Back to top
-        </button>
-      </div>
     </footer>
   );
 }
