@@ -22,7 +22,7 @@ import {
   RotateCcw,
   Save,
 } from 'lucide-react';
-import type { TranslationCopy } from '../i18n';
+import type { TranslationCopy } from '../copy';
 import type { DecisionMatrix } from '../types';
 import { MAX_SCORE } from '../utils/matrix';
 import { revealInputIfNeeded } from '../utils/matrixEditorUtils';
