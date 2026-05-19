@@ -1,13 +1,8 @@
-import {
-  ArrowLeft,
-  ArrowUp,
-  BookOpen,
-  CircleHelp,
-  Mail,
-  ShieldCheck,
-} from 'lucide-react';
+import { type FormEvent, useState } from 'react';
+import { ArrowRight, Mail } from 'lucide-react';
+import { WAITLIST_ENDPOINT } from '@clearpick/shared';
 import type { TranslationCopy } from '../i18n';
-import { Button } from './ui/button';
+import { Input } from './ui/input';
 
 interface AppFooterProps {
   copy: TranslationCopy['footer'];
@@ -15,103 +10,177 @@ interface AppFooterProps {
   showPrivacyPolicyLink?: boolean;
 }
 
+const WAITLIST_SESSION_KEY = 'clearpick:pro-waitlist-submitted';
+
+const linkClass = 'text-xl text-muted-foreground hover:text-foreground transition-colors';
+
 export function AppFooter({
   copy,
   homeLinkLabel,
   showPrivacyPolicyLink = true,
 }: AppFooterProps) {
-  const handleBackToTop = () => {
-    const decisionMatrix = document.getElementById('decision-matrix');
+  const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'succeeded' | 'error'>(() =>
+    sessionStorage.getItem(WAITLIST_SESSION_KEY) ? 'succeeded' : 'idle'
+  );
+  const [errorMsg, setErrorMsg] = useState('');
 
-    if (decisionMatrix) {
-      decisionMatrix.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (status === 'succeeded') return;
+
+    const trimmed = email.trim();
+    const input = e.currentTarget.querySelector('input[type="email"]') as HTMLInputElement | null;
+
+    if (!trimmed || !input?.validity.valid) {
+      setStatus('error');
+      setErrorMsg(copy.waitlistInvalidEmail);
+      input?.focus();
       return;
     }
 
-    window.scrollTo({
-      behavior: 'smooth',
-      top: 0,
-    });
+    setStatus('submitting');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch(WAITLIST_ENDPOINT, {
+        body: JSON.stringify({ email: trimmed, website }),
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+      });
+
+      if (!res.ok) throw new Error();
+
+      try {
+        sessionStorage.setItem(WAITLIST_SESSION_KEY, 'true');
+      } catch {
+        // In-memory status still prevents duplicate submits this session.
+      }
+      setStatus('succeeded');
+      setEmail('');
+    } catch {
+      setStatus('error');
+      setErrorMsg(copy.waitlistSubmitError);
+    }
   };
 
   return (
-    <footer className="border-t border-border py-7 sm:py-8">
-      <div className="sm:flex sm:items-center sm:justify-between sm:gap-6">
-        <div className="min-w-0">
-          <div className="flex items-center gap-3">
+    <footer className="border-t border-border pt-10 pb-8">
+      <div className="flex flex-col gap-10 sm:flex-row sm:items-center sm:gap-32">
+        {/* Left: logo + copyright + privacy */}
+        <div>
+          <div className="flex items-center gap-4">
             <img
               alt=""
               aria-hidden="true"
-              className="size-8 shrink-0 rounded-md"
+              className="size-14 shrink-0 rounded-xl"
               src="/favicon.svg"
             />
-            <p className="text-sm font-semibold text-foreground">{copy.productLabel}</p>
+            <p className="text-3xl font-bold tracking-tight text-foreground">{copy.productLabel}</p>
           </div>
-          <p
-            className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground"
-            id="site-footer-note"
-          >
-            {copy.note}
-          </p>
-          <p className="mt-2 text-xs leading-5 text-muted-foreground">
-            {copy.copyright}
-          </p>
-          <div className="mt-3">
-            <div className="flex flex-wrap gap-2">
-              {homeLinkLabel ? (
-                <Button asChild className="gap-2" size="sm">
-                  <a href="/">
-                    <ArrowLeft aria-hidden="true" className="size-4" />
-                    {homeLinkLabel}
-                  </a>
-                </Button>
-              ) : (
-                <>
-                  <Button asChild className="gap-2" size="sm" variant="outline">
-                    <a href="/how-it-works">
-                      <BookOpen aria-hidden="true" className="size-4" />
-                      {copy.howItWorks}
-                    </a>
-                  </Button>
-                  <Button asChild className="gap-2" size="sm" variant="outline">
-                    <a href="/how-it-works#faq-heading">
-                      <CircleHelp aria-hidden="true" className="size-4" />
-                      {copy.faq}
-                    </a>
-                  </Button>
-                </>
-              )}
-              {showPrivacyPolicyLink ? (
-                <Button asChild className="gap-2" size="sm" variant="outline">
-                  <a href="/privacy-policy">
-                    <ShieldCheck aria-hidden="true" className="size-4" />
-                    {copy.privacyPolicy}
-                  </a>
-                </Button>
-              ) : null}
-              <Button asChild className="gap-2" size="sm" variant="outline">
-                <a href={`mailto:${copy.contactEmail}`}>
-                  <Mail aria-hidden="true" className="size-4" />
-                  {copy.contactCta}
-                </a>
-              </Button>
-            </div>
-          </div>
+          <p className="mt-5 text-xs text-muted-foreground">{copy.copyright}</p>
+          {showPrivacyPolicyLink ? (
+            <a
+              className="mt-1 block text-xs text-muted-foreground hover:text-foreground transition-colors"
+              href="/privacy-policy"
+            >
+              {copy.privacyPolicy}
+            </a>
+          ) : null}
         </div>
 
-        <div className="mt-5 sm:mt-0 sm:shrink-0">
-          <Button
-            className="gap-2"
-            onClick={handleBackToTop}
-            size="sm"
-            variant="outline"
-          >
-            <ArrowUp aria-hidden="true" className="size-4" />
-            {copy.backToTop}
-          </Button>
+        {/* Right: navigation + waitlist form */}
+        <div className="flex flex-row gap-16 items-start">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+              {copy.navigationLabel}
+            </p>
+            <ul className="flex flex-col gap-1">
+              {homeLinkLabel ? (
+                <li>
+                  <a className={linkClass} href="/">
+                    ← {homeLinkLabel}
+                  </a>
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <a className={linkClass} href="/how-it-works">
+                      {copy.howItWorks}
+                    </a>
+                  </li>
+                  <li>
+                    <a className={linkClass} href="/how-it-works#faq-heading">
+                      {copy.faq}
+                    </a>
+                  </li>
+                  <li>
+                    <a className={linkClass} href={`mailto:${copy.contactEmail}`}>
+                      {copy.contactCta}
+                    </a>
+                  </li>
+                </>
+              )}
+            </ul>
+          </div>
+
+          {/* Waitlist form */}
+          <div className="min-w-72">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+              {copy.waitlistLabel}
+            </p>
+            {status === 'succeeded' ? (
+              <p className="text-sm text-muted-foreground">{copy.waitlistSuccess}</p>
+            ) : (
+              <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+                {/* Honeypot */}
+                <input
+                  aria-hidden="true"
+                  autoComplete="off"
+                  className="hidden"
+                  onChange={(e) => setWebsite(e.target.value)}
+                  tabIndex={-1}
+                  type="text"
+                  value={website}
+                />
+                <div className="relative">
+                  <Input
+                    autoComplete="email"
+                    className="peer ps-9 pe-10 caret-cyan-600 placeholder:text-foreground/45 focus:border-cyan-600/60 focus:ring-4 focus:ring-cyan-600/15 focus-visible:border-cyan-600/60 focus-visible:ring-4 focus-visible:ring-cyan-600/15"
+                    disabled={status === 'submitting'}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      if (status === 'error') {
+                        setStatus('idle');
+                        setErrorMsg('');
+                      }
+                    }}
+                    placeholder={copy.waitlistEmailPlaceholder}
+                    required
+                    type="email"
+                    value={email}
+                  />
+                  <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
+                    <Mail aria-hidden="true" size={16} strokeWidth={2} />
+                  </div>
+                  <button
+                    className="absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-muted-foreground/60 hover:text-foreground transition-colors disabled:opacity-40 disabled:pointer-events-none"
+                    disabled={!isValidEmail || status === 'submitting'}
+                    type="submit"
+                  >
+                    <ArrowRight aria-hidden="true" size={16} strokeWidth={2} />
+                  </button>
+                </div>
+                {status === 'error' && errorMsg ? (
+                  <p className="text-xs text-destructive">{errorMsg}</p>
+                ) : null}
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </footer>
