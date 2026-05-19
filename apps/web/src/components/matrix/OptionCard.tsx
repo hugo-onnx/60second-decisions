@@ -37,7 +37,7 @@ interface OptionCardProps {
 
 const minorButtonClass =
   'h-8 w-8 rounded-full text-muted-foreground hover:bg-slate-900/5 hover:text-foreground';
-const labelClass = 'text-[11px] font-semibold uppercase text-muted-foreground';
+const labelClass = 'text-[11px] font-semibold text-muted-foreground';
 
 export function OptionCard({
   option,
@@ -102,7 +102,7 @@ export function OptionCard({
           {isTopOption ? (
             <span
               className={cn(
-                'rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase',
+                'rounded-full px-2.5 py-1 text-[10px] font-semibold',
                 optionBadgeClassName,
               )}
             >
@@ -142,7 +142,7 @@ export function OptionCard({
         {hasOptionName && !areResultsHidden ? (
           <>
             <div className="flex items-end justify-between gap-3">
-              <span className="text-xs font-semibold uppercase text-muted-foreground">
+              <span className="text-xs font-semibold text-muted-foreground">
                 {copy.liveTotal}
               </span>
               <output
