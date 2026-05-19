@@ -1,7 +1,7 @@
 import { CircleHelp } from 'lucide-react';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
-import type { TranslationCopy } from '@/i18n';
+import type { TranslationCopy } from '@/copy';
 
 interface BlindScoringControlsProps {
   areResultsHidden: boolean;
