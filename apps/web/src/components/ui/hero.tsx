@@ -9,7 +9,7 @@ import {
   type CSSProperties,
   type RefObject,
 } from 'react';
-import type { TranslationCopy } from '@/i18n';
+import type { TranslationCopy } from '@/copy';
 import { cn } from '@/lib/utils';
 import { GlassButton } from '@/components/ui/apple-tahoe-liquid-glass-button';
 
