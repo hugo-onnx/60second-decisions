@@ -145,7 +145,7 @@ export function QuickDecider({ availableSourceOptions, copy }: QuickDeciderProps
       className="mx-auto max-w-5xl px-1 py-2 sm:px-4 sm:py-6"
     >
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold uppercase text-cyan-800">
+        <p className="text-xs font-semibold text-cyan-800">
           {copy.sectionLabel}
         </p>
         <h2 className="mt-3 font-display text-4xl font-semibold tracking-normal text-foreground sm:text-5xl lg:text-6xl">
