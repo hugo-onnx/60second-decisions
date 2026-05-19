@@ -1,5 +1,5 @@
 import ShaderShowcase from '@/components/ui/hero';
-import type { TranslationCopy } from '../i18n';
+import type { TranslationCopy } from '../copy';
 
 function scrollToMatrix() {
   document.getElementById('decision-matrix')?.scrollIntoView({
