@@ -415,7 +415,7 @@ export function ResultsPanel({
           <LockKeyhole className="size-4" />
         </span>
         <div className="min-w-0">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-800">
+          <p className="text-xs font-bold tracking-[0.18em] text-cyan-800">
             {copy.proValidationComingSoon}
           </p>
           <h3 className="mt-2 text-base font-semibold text-foreground">
@@ -496,7 +496,7 @@ export function ResultsPanel({
               summary.isTie ? 'border-amber-500/45' : 'border-cyan-600/35',
             )}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">
               {copy.recommendationEyebrow}
             </p>
             <div className="mt-3 space-y-2">
@@ -519,7 +519,7 @@ export function ResultsPanel({
               )}
             >
               <div className="rounded-md border border-border bg-white/[0.74] p-4">
-                <p className="text-xs font-semibold uppercase text-muted-foreground">
+                <p className="text-xs font-semibold text-muted-foreground">
                   {copy.topScore}
                 </p>
                 <p className="mt-1 text-2xl font-semibold text-foreground">
@@ -532,7 +532,7 @@ export function ResultsPanel({
 
               {shouldShowAlternative ? (
                 <div className="rounded-md border border-border bg-white/[0.74] p-4">
-                  <p className="text-xs font-semibold uppercase text-muted-foreground">
+                  <p className="text-xs font-semibold text-muted-foreground">
                     {copy.closestAlternative}
                   </p>
                   <p className="mt-1 text-sm font-semibold leading-6 text-foreground">
@@ -712,7 +712,7 @@ export function ResultsPanel({
         )}
 
         <section className="flex flex-col gap-4 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="order-2 text-xs uppercase text-muted-foreground sm:order-1">
+          <p className="order-2 text-xs text-muted-foreground sm:order-1">
             {copy.matrixCount(matrix.options.length, matrix.categories.length)}
           </p>
           <Button
