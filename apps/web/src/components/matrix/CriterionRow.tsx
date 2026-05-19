@@ -38,7 +38,7 @@ interface CriterionRowProps {
   onCategoryRankingChange: (id: string, optionIds: string[]) => void;
 }
 
-const labelClass = 'text-[11px] font-semibold uppercase text-muted-foreground';
+const labelClass = 'text-[11px] font-semibold text-muted-foreground';
 const minorButtonClass =
   'h-8 w-8 rounded-full text-muted-foreground hover:bg-slate-900/5 hover:text-foreground';
 
