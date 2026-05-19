@@ -3,7 +3,7 @@ import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import type { TranslationCopy } from '@/i18n';
+import type { TranslationCopy } from '@/copy';
 import type { Option } from '@/types';
 import { formatPoints, getRangeStyle } from '@/utils/matrixEditorUtils';
 
