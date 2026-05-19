@@ -97,7 +97,7 @@ export function AppFooter({
 
         {/* Centre: navigation */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+          <p className="text-xs font-semibold text-muted-foreground mb-4">
             {copy.navigationLabel}
           </p>
           <ul className="flex flex-col gap-2">
@@ -131,7 +131,7 @@ export function AppFooter({
 
         {/* Right: waitlist form */}
         <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+          <p className="text-xs font-semibold text-muted-foreground mb-4">
             {copy.waitlistLabel}
           </p>
           {status === 'succeeded' ? (
