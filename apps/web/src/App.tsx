@@ -224,7 +224,7 @@ function HowItWorksPage({
             className="mx-auto max-w-3xl px-1 py-4 sm:py-8"
           >
             <header className="pb-12">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-700">
+              <p className="text-xs font-bold tracking-[0.28em] text-cyan-700">
                 {copy.eyebrow}
               </p>
               <h1
@@ -251,7 +251,7 @@ function HowItWorksPage({
                 aria-labelledby="workflow-heading"
                 className="border-t border-cyan-900/15 pt-10"
               >
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+                <p className="text-xs font-bold tracking-[0.24em] text-cyan-700">
                   01
                 </p>
                 <h2
@@ -291,7 +291,7 @@ function HowItWorksPage({
                 aria-labelledby="use-cases-heading"
                 className="border-t border-cyan-900/15 pt-10"
               >
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+                <p className="text-xs font-bold tracking-[0.24em] text-cyan-700">
                   02
                 </p>
                 <h2
@@ -318,7 +318,7 @@ function HowItWorksPage({
                 aria-labelledby="privacy-heading"
                 className="border-t border-cyan-900/15 pt-10"
               >
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+                <p className="text-xs font-bold tracking-[0.24em] text-cyan-700">
                   03
                 </p>
                 <h2
@@ -531,7 +531,7 @@ function SeoTemplatePage({
         <main>
           <article className="mx-auto max-w-3xl px-1 py-4 sm:py-8">
             <header className="pb-12">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-700">
+              <p className="text-xs font-bold tracking-[0.28em] text-cyan-700">
                 {page.eyebrow}
               </p>
               <h1 className="mt-3 max-w-4xl font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
@@ -552,7 +552,7 @@ function SeoTemplatePage({
 
             <div className="space-y-14">
               <section className="border-t border-cyan-900/15 pt-10">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+                <p className="text-xs font-bold tracking-[0.24em] text-cyan-700">
                   01
                 </p>
                 <h2 className="mt-2 font-display text-3xl font-semibold text-foreground">
@@ -571,7 +571,7 @@ function SeoTemplatePage({
               </section>
 
               <section className="border-t border-cyan-900/15 pt-10">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-700">
+                <p className="text-xs font-bold tracking-[0.24em] text-cyan-700">
                   02
                 </p>
                 <h2 className="mt-2 font-display text-3xl font-semibold text-foreground">
