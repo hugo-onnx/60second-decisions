@@ -56,22 +56,6 @@ export function MatrixEditor({
         </div>
       </header>
 
-      <section
-        aria-label={copy.onboardingGuideAria}
-        className="w-fit rounded-lg border border-border bg-white/[0.76] p-4 shadow-sm sm:p-5"
-      >
-        <ol className="flex min-w-0 flex-col gap-2 text-sm font-semibold text-foreground sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-3">
-          {copy.onboardingSteps.map((step, index) => (
-            <li
-              className="border-l-2 border-cyan-900/25 pl-3 leading-6"
-              key={step}
-            >
-              {index + 1}. {step}
-            </li>
-          ))}
-        </ol>
-      </section>
-
       <OptionsSection
         areResultsHidden={areResultsHidden}
         copy={copy}

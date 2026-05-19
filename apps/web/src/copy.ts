@@ -84,8 +84,6 @@ export interface TranslationCopy {
     intro: string;
     localStorageNoticeTitle: string;
     localStorageNoticeBody: string;
-    onboardingGuideAria: string;
-    onboardingSteps: string[];
     optionsRegionAria: string;
     optionsHeading: string;
     optionsDescription: string;
@@ -385,8 +383,6 @@ export const copy: TranslationCopy = {
     localStorageNoticeTitle: 'Stored only on this device',
     localStorageNoticeBody:
       'Your decision stays in this browser. We do not upload, store, or access it.',
-    onboardingGuideAria: 'Workflow guide',
-    onboardingSteps: ['Name your options', 'Set what matters', 'Rank and compare'],
     optionsRegionAria: 'Options to compare',
     optionsHeading: 'Your options',
     optionsDescription:
