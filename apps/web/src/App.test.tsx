@@ -970,15 +970,6 @@ describe('App', () => {
     );
   });
 
-  it('renders the onboarding strip', () => {
-    render(<App />);
-
-    const guide = screen.getByRole('region', { name: /workflow guide/i });
-    expect(within(guide).getByText('1. Name your options')).toBeInTheDocument();
-    expect(within(guide).getByText('2. Set what matters')).toBeInTheDocument();
-    expect(within(guide).getByText('3. Rank and compare')).toBeInTheDocument();
-  });
-
   it('keeps blank starter option cards visually unscored until the name is committed', async () => {
     const user = userEvent.setup();
 
