@@ -1,6 +1,6 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { copy } from '@/i18n';
+import { copy } from '@/copy';
 import ShaderShowcase from './hero';
 
 const heroCopy = copy.hero;
