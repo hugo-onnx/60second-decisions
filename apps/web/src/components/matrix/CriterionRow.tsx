@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Sortable } from '@/components/ui/sortable';
 import { cn } from '@/lib/utils';
-import type { TranslationCopy } from '@/i18n';
+import type { TranslationCopy } from '@/copy';
 import type { Category, DecisionMatrix } from '@/types';
 import {
   DEFAULT_SCORE,
