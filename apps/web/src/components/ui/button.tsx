@@ -20,6 +20,8 @@ const buttonVariants = cva(
       },
       variant: {
         default:
+          'bg-cyan-600 text-white shadow-[0_12px_28px_rgba(8,145,178,0.2)] hover:bg-cyan-500 hover:shadow-[0_16px_34px_rgba(8,145,178,0.18)]',
+        gradient:
           'bg-gradient-to-r from-cyan-600 to-orange-600 text-white shadow-[0_12px_28px_rgba(8,145,178,0.2)] hover:from-cyan-500 hover:to-orange-500 hover:shadow-[0_16px_34px_rgba(234,88,12,0.18)]',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
