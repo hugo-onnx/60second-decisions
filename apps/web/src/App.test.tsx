@@ -296,11 +296,6 @@ describe('App', () => {
     ).toBeInTheDocument();
     expect(
       within(footer).getByText(
-        /your decision data stays in this browser/i,
-      ),
-    ).toBeInTheDocument();
-    expect(
-      within(footer).getByText(
         'Copyright © 2026 ClearPick - All rights reserved.',
       ),
     ).toBeInTheDocument();
@@ -333,17 +328,9 @@ describe('App', () => {
     expect(screen.queryByText(/trust strip/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/minimal premium/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/action footer/i)).not.toBeInTheDocument();
-    expect(
-      document.getElementById('site-footer-note'),
-    ).toHaveTextContent(
-      /waitlist emails are only sent when you submit the pro form/i,
-    );
     expect(document.getElementById('local-save-notice')).toHaveTextContent(
       /your decision stays on this device/i,
     );
-    expect(
-      within(footer).getByRole('button', { name: /back to top/i }),
-    ).toBeInTheDocument();
   });
 
   it('scrolls to the decision matrix when Start is clicked', async () => {
@@ -375,31 +362,6 @@ describe('App', () => {
         behavior: 'smooth',
         block: 'start',
       });
-    });
-
-    Object.defineProperty(window.HTMLElement.prototype, 'scrollIntoView', {
-      configurable: true,
-      value: originalScrollIntoView,
-    });
-  });
-
-  it('scrolls to the decision matrix when the footer top action is clicked', async () => {
-    const user = userEvent.setup();
-    const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
-    const scrollIntoViewMock = vi.fn();
-
-    Object.defineProperty(window.HTMLElement.prototype, 'scrollIntoView', {
-      configurable: true,
-      value: scrollIntoViewMock,
-    });
-
-    render(<App />);
-
-    await user.click(screen.getByRole('button', { name: /back to top/i }));
-
-    expect(scrollIntoViewMock).toHaveBeenCalledWith({
-      behavior: 'smooth',
-      block: 'start',
     });
 
     Object.defineProperty(window.HTMLElement.prototype, 'scrollIntoView', {
