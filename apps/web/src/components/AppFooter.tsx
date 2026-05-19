@@ -1,7 +1,7 @@
 import { type FormEvent, useState } from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
 import { WAITLIST_ENDPOINT } from '@clearpick/shared';
-import type { TranslationCopy } from '../i18n';
+import type { TranslationCopy } from '../copy';
 import { Input } from './ui/input';
 
 interface AppFooterProps {
