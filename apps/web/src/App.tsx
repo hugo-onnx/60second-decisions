@@ -238,7 +238,7 @@ function HowItWorksPage({
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
-                  className="inline-flex justify-center rounded-full bg-gradient-to-r from-cyan-600 to-orange-600 px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="inline-flex justify-center rounded-full bg-cyan-600 px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)] transition hover:bg-cyan-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   href="/"
                 >
                   {copy.backToTool}
@@ -413,7 +413,7 @@ function PrivacyPolicyPage({
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
-                  className="inline-flex justify-center rounded-full bg-gradient-to-r from-cyan-600 to-orange-600 px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="inline-flex justify-center rounded-full bg-cyan-600 px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)] transition hover:bg-cyan-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   href="/"
                 >
                   {copy.backToTool}
@@ -542,7 +542,7 @@ function SeoTemplatePage({
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
-                  className="inline-flex justify-center rounded-full bg-gradient-to-r from-cyan-600 to-orange-600 px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="inline-flex justify-center rounded-full bg-cyan-600 px-5 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)] transition hover:bg-cyan-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   href="/"
                 >
                   Open the decision tool
@@ -905,7 +905,7 @@ function App() {
                     className={cn(
                       'inline-flex min-h-10 min-w-0 items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:px-4',
                       isSelected
-                        ? 'bg-gradient-to-r from-cyan-600 to-orange-600 text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)]'
+                        ? 'bg-cyan-600 text-white shadow-[0_10px_24px_rgba(8,145,178,0.18)]'
                         : 'hover:bg-white hover:text-cyan-800',
                     )}
                     id={tab.tabId}
