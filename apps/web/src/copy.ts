@@ -201,7 +201,6 @@ export interface TranslationCopy {
   };
   footer: {
     productLabel: string;
-    note: string;
     copyright: string;
     navigationLabel: string;
     howItWorks: string;
@@ -518,7 +517,6 @@ export const copy: TranslationCopy = {
   },
   footer: {
     productLabel: 'ClearPick',
-    note: 'Your decision data stays in this browser. Waitlist emails are only sent when you submit the Pro form.',
     copyright: 'Copyright © 2026 ClearPick - All rights reserved.',
     navigationLabel: 'Navigation',
     howItWorks: 'How it works',
