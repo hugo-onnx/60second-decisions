@@ -205,12 +205,19 @@ export interface TranslationCopy {
     productLabel: string;
     note: string;
     copyright: string;
+    navigationLabel: string;
     howItWorks: string;
     faq: string;
     privacyPolicy: string;
     contactCta: string;
     contactEmail: string;
-    backToTop: string;
+    waitlistLabel: string;
+    waitlistEmailPlaceholder: string;
+    waitlistSubmit: string;
+    waitlistSubmitting: string;
+    waitlistSuccess: string;
+    waitlistInvalidEmail: string;
+    waitlistSubmitError: string;
   };
 }
 
@@ -517,11 +524,18 @@ export const copy: TranslationCopy = {
     productLabel: 'ClearPick',
     note: 'Your decision data stays in this browser. Waitlist emails are only sent when you submit the Pro form.',
     copyright: 'Copyright © 2026 ClearPick - All rights reserved.',
+    navigationLabel: 'Navigation',
     howItWorks: 'How it works',
     faq: 'FAQ',
     privacyPolicy: 'Privacy Policy',
     contactCta: 'Contact support',
     contactEmail: 'hugonzalezhuerta@gmail.com',
-    backToTop: 'Back to top',
+    waitlistLabel: 'Join the waitlist',
+    waitlistEmailPlaceholder: 'your@email.com',
+    waitlistSubmit: 'Join',
+    waitlistSubmitting: 'Joining...',
+    waitlistSuccess: "You're in! We'll be in touch.",
+    waitlistInvalidEmail: 'Enter a valid email address.',
+    waitlistSubmitError: 'Could not join. Try again in a moment.',
   },
 };
