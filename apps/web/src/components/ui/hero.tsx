@@ -298,7 +298,7 @@ export default function ShaderShowcase({
                 className="h-5 w-5 shrink-0 text-cyan-200"
               />
               <h2
-                className="whitespace-nowrap text-xs font-semibold uppercase leading-4 text-white/95"
+                className="whitespace-nowrap text-xs font-semibold leading-4 text-white/95"
                 id="local-save-notice-title"
               >
                 {copy.localStorageNoticeTitle}
