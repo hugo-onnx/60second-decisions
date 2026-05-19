@@ -891,7 +891,7 @@ function App() {
           <main className="space-y-9" id="decision-matrix">
             <div
               aria-label={copy.workspaceTabs.label}
-              className="inline-flex max-w-full rounded-full border border-border bg-white/[0.72] p-1 shadow-sm"
+              className="flex w-fit mx-auto rounded-full border border-border bg-white/[0.72] p-1 shadow-sm"
               role="tablist"
             >
               {workspaceTabs.map((tab) => {
