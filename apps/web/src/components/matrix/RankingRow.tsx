@@ -2,7 +2,7 @@ import { ArrowDown, ArrowUp, GripVertical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SortableItem, SortableItemHandle } from '@/components/ui/sortable';
 import { cn } from '@/lib/utils';
-import type { TranslationCopy } from '@/i18n';
+import type { TranslationCopy } from '@/copy';
 import type { Category, Option } from '@/types';
 import { formatSliderValue, moveRankedOption, revealClosestFocusCard } from '@/utils/matrixEditorUtils';
 
