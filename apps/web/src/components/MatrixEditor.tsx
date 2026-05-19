@@ -1,4 +1,4 @@
-import type { TranslationCopy } from '../i18n';
+import type { TranslationCopy } from '../copy';
 import type { DecisionMatrix } from '../types';
 import type { DecisionSummary } from '../utils/scoring';
 import { BlindScoringControls } from './matrix/BlindScoringControls';
