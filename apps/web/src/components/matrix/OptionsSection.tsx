@@ -27,7 +27,7 @@ interface OptionsSectionProps {
   onOptionNameChange: (id: string, name: string) => void;
 }
 
-const labelClass = 'text-[11px] font-semibold uppercase text-muted-foreground';
+const labelClass = 'text-[11px] font-semibold text-muted-foreground';
 
 export function OptionsSection({
   matrix,
@@ -202,7 +202,7 @@ export function OptionsSection({
           <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base">
             {copy.optionsDescription}
           </p>
-          <p className="mt-2 text-xs font-semibold uppercase text-muted-foreground">
+          <p className="mt-2 text-xs font-semibold text-muted-foreground">
             {copy.optionsCount(matrix.options.length)}
           </p>
         </div>
