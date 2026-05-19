@@ -5,7 +5,7 @@ import { LandingHero } from './components/LandingHero';
 import { MatrixEditor } from './components/MatrixEditor';
 import { QuickDecider } from './components/QuickDecider';
 import { ResultsPanel } from './components/ResultsPanel';
-import { copy, type TranslationCopy } from './i18n';
+import { copy, type TranslationCopy } from './copy';
 import { cn } from './lib/utils';
 import type { DecisionMatrix } from './types';
 import {
