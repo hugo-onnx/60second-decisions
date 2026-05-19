@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
-import type { TranslationCopy } from '@/i18n';
+import type { TranslationCopy } from '@/copy';
 import type { DecisionMatrix } from '@/types';
 import { MAX_OPTIONS, MIN_OPTIONS, getDisplayName } from '@/utils/matrix';
 import type { DecisionSummary } from '@/utils/scoring';
