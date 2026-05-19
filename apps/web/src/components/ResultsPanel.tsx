@@ -456,6 +456,7 @@ export function ResultsPanel({
         onClick={handleOpenWaitlistDialog}
         ref={waitlistTriggerRef}
         size="sm"
+        variant="gradient"
       >
         <Mail aria-hidden="true" className="size-4" />
         {copy.proRequest}
@@ -898,6 +899,7 @@ export function ResultsPanel({
                   }
                   size="sm"
                   type="submit"
+                  variant="gradient"
                 >
                   {waitlistStatus === 'submitting'
                     ? copy.proWaitlistSubmitting
