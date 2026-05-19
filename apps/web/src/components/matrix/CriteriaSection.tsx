@@ -159,7 +159,7 @@ export function CriteriaSection({
         onSubmit={handleAddCategorySubmit}
         ref={pendingCategoryFormRef}
       >
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+        <div className="flex flex-row items-end gap-3">
           <div className="min-w-0 flex-1">
             <label className={labelClass} htmlFor="new-criterion-name">
               {copy.newCriterion}
@@ -175,7 +175,7 @@ export function CriteriaSection({
           </div>
           <Button
             aria-label={copy.addCriterion}
-            className="h-11 w-full shrink-0 sm:w-11"
+            className="h-11 w-11 shrink-0"
             size="icon"
             type="submit"
           >
