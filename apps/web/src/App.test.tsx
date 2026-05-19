@@ -13,7 +13,7 @@ import App from './App';
 import { MatrixEditor } from './components/MatrixEditor';
 import { RankingRow } from './components/matrix/RankingRow';
 import { Sortable } from './components/ui/sortable';
-import { copy } from './i18n';
+import { copy } from './copy';
 import {
   SCORE_MODE_BOOLEAN,
   createStarterMatrix,
